@@ -7,8 +7,7 @@ This is a minimal implementation of the RAG model for question answering.
 
 #### Install Python using MiniConda
 
-1) Download and install Miniconda from [here] (https://docs.
-naconda.com/free/miniconda/#quick-command-line-install)
+1) Download and install Miniconda from [here] (https://docs.naconda.com/free/miniconda/#quick-command-line-install)
 
 2) Create a new environment using the following command:
 ```bash
