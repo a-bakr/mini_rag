@@ -33,7 +33,7 @@ async def startup_span():
         language = settings.PRIMARY_LANG,
         default_language = settings.DEFAULT_LANG
     )
-    
+
 
 async def shutdown_span():
     app.mongo_connection.close()
