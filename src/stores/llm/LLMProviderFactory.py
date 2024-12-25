@@ -15,6 +15,10 @@ class LLMProviderFactory:
                 default_generation_temperature=self.config.GENERATION_DAFAULT_TEMPERATURE
             )
 
+        print("============================================")
+        print(provider)
+        print(LLMEnums.OPENAI.value)
+        print("============================================")
         if provider == LLMEnums.COHERE.value:
             return CoHereProvider(
                 api_key = self.config.COHERE_API_KEY,

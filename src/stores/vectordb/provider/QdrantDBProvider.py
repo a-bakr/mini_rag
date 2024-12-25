@@ -1,7 +1,7 @@
 from ..VectorDBInterface import VectorDBInterface
 from models.db_schemes import RetrievedDocument
 from qdrant_client import models, QdrantClient
-from VectorDBEnums import DistanceMethodEnums
+from ..VectorDBEnums import DistanceMethodEnums
 from typing import List
 import logging
 
