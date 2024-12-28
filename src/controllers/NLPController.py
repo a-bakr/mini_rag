@@ -1,3 +1,4 @@
+from helpers.helper import print_log
 from .BaseController import BaseController
 from models.db_schemes import Project, DataChunk
 from stores.llm.LLMEnums import DocumentTypeEnum
@@ -52,7 +53,7 @@ class NLPController(BaseController):
             collection_name = collection_name,
             texts = texts,
             metadata = metadata,
-            vectors = vectors,
+            vector = vectors,
             record_ids = chunks_ids
         )
         return True
@@ -66,7 +67,7 @@ class NLPController(BaseController):
 
         if not vector or len(vector) == 0:
             return False
-        
+
         # step3: do samantic search
         results = self.vectordb_client.search_by_vector(
             collection_name = collection_name,
@@ -76,13 +77,15 @@ class NLPController(BaseController):
 
         if not results:
             return False
+        
+        return results
 
     def answer_rag_question(self, project: Project, query: str, limit: int = 10):
         answer, full_prompt, chat_history = None, None, None
 
         # step1: retrieve related documents
         retrieved_document = self.search_vector_db_collection(project, query, limit)
-        
+
         if not retrieved_document or len(retrieved_document) == 0:
             return answer, full_prompt, chat_history
         

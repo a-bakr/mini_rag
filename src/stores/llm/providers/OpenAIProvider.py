@@ -1,3 +1,4 @@
+from helpers.helper import print_log
 from ..LLMInterface import LLMInterface
 from ..LLMEnums import OpenAIEnums
 from openai import OpenAI
@@ -21,8 +22,8 @@ class OpenAIProvider(LLMInterface):
         self.embedding_size = None
 
         self.client = OpenAI(
-            api_key= self.api_key,
-            base_url= self.api_url if self.api_url and len(self.api_url) else None
+            api_key = self.api_key,
+            base_url = self.api_url if self.api_url and len(self.api_url) else None
         )
 
         self.enums = OpenAIEnums
@@ -54,9 +55,10 @@ class OpenAIProvider(LLMInterface):
 
         chat_history.append(self.construct_prompt(prompt, role=OpenAIEnums.USER.value))
 
+
         response = self.client.chat.completions.create(
             model= self.generation_model_id,
-            message= chat_history,
+            messages= chat_history,
             max_tokens= max_output_tokens,
             temperature= temperature,
         )
@@ -65,7 +67,7 @@ class OpenAIProvider(LLMInterface):
             self.logger.error("Error while generation text with OpenAI")
             return None
         
-        return response.text
+        return response.choices[0].message.content
     
     def embed_text(self, text: str, document_type: str = None):
         if not self.client:
@@ -90,5 +92,5 @@ class OpenAIProvider(LLMInterface):
     def construct_prompt(self, prompt: str, role: str):
         return {
             'role': role,
-            'text': self.process_text(prompt)
+            'content': self.process_text(prompt)
         }

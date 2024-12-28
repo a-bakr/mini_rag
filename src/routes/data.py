@@ -2,7 +2,6 @@ from controllers import DataController, ProcessController, ProjectController
 from fastapi import APIRouter, Depends, UploadFile, status, Request
 from models.enums.AssetTypeEnum import AssetTypeEnum
 from helpers.config import get_settings, Settings
-
 from models.db_schemes import DataChunk, Asset
 from models.ProjectModel import ProjectModel
 from fastapi.responses import JSONResponse
@@ -10,6 +9,7 @@ from models.ChunkModel import ChunkModel
 from models.AssetModel import AssetModel
 from .schemes.data import ProcessRequest
 from models import ResponseSignal
+from bson.objectid import ObjectId
 import aiofiles
 import logging
 import os
@@ -25,6 +25,7 @@ data_router = APIRouter(
 @data_router.post("/upload/{project_id}")
 async def upload_data(request: Request, project_id: str, file: UploadFile, 
                       app_settings: Settings = Depends(get_settings)):
+
 
     project_model = await ProjectModel.create_instance(db_client=request.app.db_client)
     project = await project_model.get_project_or_create_one(project_id)
@@ -63,12 +64,11 @@ async def upload_data(request: Request, project_id: str, file: UploadFile,
     asset_model = await AssetModel.create_instance(db_client=request.app.db_client)
 
     asset_resource = Asset(
-        asset_project_id=project_id,
+        asset_project_id=project.id,
         asset_type=AssetTypeEnum.FILE.value,
         asset_name=file_id,
         asset_size=os.path.getsize(file_path)
     )
-
     asset_record = await asset_model.create_asset(asset=asset_resource)
 
     return JSONResponse(
