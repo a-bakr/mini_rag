@@ -1,7 +1,7 @@
 # Refrace
-This project is an applied project based on the course [mini-RAG | From notebooks to the PRODUCTION](https://www.youtube.com/playlist?list=PLvLvlVqNQGHCUR2p0b8a0QpVjDUg50wQj).
-You can find the course code and resources on the [GitHub repository](https://github.com/bakrianoo/mini-rag/tree/tut-009).
-Flollow Abu Bakr Soliman on [LinkedIn](https://www.linkedin.com/in/bakrianoo).
+This project is an applied project based on the course [mini-RAG | From notebooks to the PRODUCTION](https://www.youtube.com/playlist?list=PLvLvlVqNQGHCUR2p0b8a0QpVjDUg50wQj)
+You can find the course code and resources on the [GitHub repository](https://github.com/bakrianoo/mini-rag/tree/tut-009)
+Flollow Abu Bakr Soliman on [LinkedIn](https://www.linkedin.com/in/bakrianoo)
 
 
 # RAG Application
