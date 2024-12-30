@@ -1,6 +1,13 @@
-# mini-rag
+# Refrace
+This project is an applied project based on the course [mini-RAG | From notebooks to the PRODUCTION](https://www.youtube.com/playlist?list=PLvLvlVqNQGHCUR2p0b8a0QpVjDUg50wQj).
+You can find the course code and resources on the [GitHub repository](https://github.com/bakrianoo/mini-rag/tree/tut-009).
+Flollow Abu Bakr Soliman on [LinkedIn](https://www.linkedin.com/in/bakrianoo).
 
-This is a minimal implementation of the RAG model for question answering.
+
+# RAG Application
+The project aims to develop a Retrieval-Augmented Generation (RAG) application that combines the power of Large Language Models (LLMs) with robust data storage and retrieval mechanisms to deliver highly accurate, real-time responses. The objective is to create a scalable and efficient API that enables seamless integration with external systems.
+
+![Application Diagram](./src/assets/Machine%20Learning.png)
 
 ## Requirements
 - python 3.8 or later
