@@ -1,6 +1,6 @@
-from .BaseDataModel import BaseDataModel
-from .db_schemes import Project
-from .enums.DataBaseEnum import DataBaseEnum
+from models.mongo_db.BaseDataModel import BaseDataModel
+from models.mongo_db.db_schemes.project import Project
+from models.enums import DataBaseEnum
 
 class ProjectModel(BaseDataModel):
     def __init__(self, db_client: object):

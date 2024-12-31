@@ -1,6 +1,6 @@
-from .BaseDataModel import BaseDataModel
-from .db_schemes import Asset
-from .enums.DataBaseEnum import DataBaseEnum
+from models.mongo_db.BaseDataModel import BaseDataModel
+from models.enums.DataBaseEnum import DataBaseEnum
+from models.mongo_db.db_schemes.asset import Asset
 from bson import ObjectId
  
 class AssetModel(BaseDataModel):
