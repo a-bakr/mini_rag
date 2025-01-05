@@ -1,3 +1,2 @@
-mongodata
-pgvector_data
+mongodb
 .env

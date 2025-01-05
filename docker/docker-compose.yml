@@ -13,5 +13,9 @@ services:
       - backend
     restart: always
 
+
+networks:
+  backend:
+
 volumes:
-  mongodata:
+  mongodb:
