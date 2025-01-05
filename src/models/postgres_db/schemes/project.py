@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, DateTime, func
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
-from db_schemes import SQLAlchemyBase
+from schemes import SQLAlchemyBase
 import uuid
  
 

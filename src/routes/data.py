@@ -1,15 +1,17 @@
 from controllers import DataController, ProcessController, ProjectController
 from fastapi import APIRouter, Depends, UploadFile, status, Request
-from models.enums.AssetTypeEnum import AssetTypeEnum
-from helpers.config import get_settings, Settings
-from models.db_schemes import DataChunk, Asset
-from models.ProjectModel import ProjectModel
 from fastapi.responses import JSONResponse
-from models.ChunkModel import ChunkModel
-from models.AssetModel import AssetModel
-from .schemes.data import ProcessRequest
+
+from models.postgres_db.schemes import DataChunk, Asset
+from models.postgres_db.ProjectModel import ProjectModel
+from models.enums.AssetTypeEnum import AssetTypeEnum
+from models.postgres_db.ChunkModel import ChunkModel
+from models.postgres_db.AssetModel import AssetModel
 from models import ResponseSignal
-from bson.objectid import ObjectId
+
+from helpers.config import get_settings, Settings
+from routes.schemes.data import ProcessRequest
+
 import aiofiles
 import logging
 import os

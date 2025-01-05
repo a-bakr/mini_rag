@@ -1,5 +1,5 @@
 from models.mongo_db.BaseDataModel import BaseDataModel
-from models.mongo_db.db_schemes.project import Project
+from models.mongo_db.schemes.project import Project
 from models.enums import DataBaseEnum
 
 class ProjectModel(BaseDataModel):

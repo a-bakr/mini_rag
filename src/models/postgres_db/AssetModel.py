@@ -1,7 +1,7 @@
 from postgres_db import BaseDataModel
 from sqlalchemy.future import select
 from enums import DataBaseEnum
-from db_schemes import Asset
+from schemes import Asset
 from bson import ObjectId
 
 

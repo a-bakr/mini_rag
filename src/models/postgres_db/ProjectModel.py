@@ -1,6 +1,6 @@
 from postgres_db import BaseDataModel
 from sqlalchemy.future import select
-from db_schemes import Project
+from schemes import Project
 from enums import DataBaseEnum
 from sqlalchemy import func
 

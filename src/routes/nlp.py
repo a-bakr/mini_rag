@@ -1,12 +1,14 @@
 from helpers.helper import print_log
 from routes.schemes.nlp import PushRequest, SearchRequest
 from fastapi import APIRouter, status, Request
-from models.ProjectModel import ProjectModel
+
 from fastapi.responses import JSONResponse
-from models.ChunkModel import ChunkModel
 from controllers import NLPController
 from models import ResponseSignal
 import logging
+
+from models.postgres_db.ProjectModel import ProjectModel
+from models.postgres_db.ChunkModel import ChunkModel
 
 logger = logging.getLogger('uvicorn.error')
 

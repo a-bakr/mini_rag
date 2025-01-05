@@ -1,6 +1,6 @@
 from postgres_db import BaseDataModel
 from sqlalchemy.future import select
-from db_schemes import DataChunk
+from schemes import DataChunk
 from bson import ObjectId
 from enums import DataBaseEnum
 from sqlalchemy import func, delete

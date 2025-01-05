@@ -1,7 +1,7 @@
 from sqlalchemy import Index, Column, Integer, String, DateTime, func, ForeignKey
 from sqlalchemy.dialects.postgresql import UUID, JSONB
 from sqlalchemy.orm import relationship
-from db_schemes import SQLAlchemyBase
+from schemes import SQLAlchemyBase
 import uuid
  
 class Asset(SQLAlchemyBase):
